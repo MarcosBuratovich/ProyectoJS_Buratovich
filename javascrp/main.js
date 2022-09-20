@@ -128,10 +128,10 @@ function ordenarProductos(prod) {
       sortArrayPrecio(prod, metodoIngresadoPrecio)
       break;
     case 3:
-      // let filtro = prompt('Ingrese la busqueda').toUpperCase
-      // let busqueda = prod.filter(a => a.nombre.includes(filtro))
-      // console.log(JSON.stringify(busqueda));
-      // break;
+      let filtro = prompt('Ingrese la busqueda').toUpperCase()
+      const busqueda = prod.filter(a => a.nombre.includes(filtro))
+      mostrarCarrito(busqueda);
+      break;
     default:
       break;
   }

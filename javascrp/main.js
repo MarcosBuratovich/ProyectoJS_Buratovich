@@ -1,7 +1,6 @@
 // El tema que tome de eleccion es un e-comerce de venta de muebles fabricado a mano
 
-const PRODUCTOS = [
-  {
+const PRODUCTOS = [{
     id: 1,
     nombre: "BANQUITO",
     precio: 5700,
@@ -47,11 +46,10 @@ alertaFinal(carrito)
 
 function alertaIncial(car) {
   let numeroIngresado
+  const msjI = "1. Comenzar/Continuar compra\n 2. Ordenar productos\n 3. Aplicar descuento\n 4. Mostrar carrito\n 5. Finalizar\n"
   do {
-    numeroIngresado = parseInt(prompt("1. Comenzar/Continuar compra\n 2. Ordenar productos\n 3. Aplicar descuento\n 4. Mostrar carrito\n 5. Finalizar\n"))
-    while (verificarIngreso(numeroIngresado, 1, 5) === false) {
-      numeroIngresado = parseInt(prompt("ERROR!!!\n 1. Comenzar/Continuar compra\n 2. Ordenar productos\n 3. Aplicar descuento\n 4. Mostrar carrito\n 5. Finalizar\n"))
-    }
+    numeroIngresado = parseInt(prompt(msjI))
+    verificarIngreso(numeroIngresado, 1, 5, msjI)
     switch (numeroIngresado) {
       case 1:
         crearCarrito(cantDeArticulos, car, PRODUCTOS)
@@ -92,43 +90,38 @@ function pedirNombreYApe() {
 }
 
 function crearCarrito(cant, car, P) {
-  let productoIngresado = parseInt(prompt("Ingrese un producto que desea comprar.\n 1. Banquito\n 2. Candelabro\n 3. Bandeja Hexagonal\n 4. Bandeja Octogonal\n 5. Espejo\n 6. Mesa Octogonal\n 7.Estante\n Ingrese 0 para terminar con la seleccion"))
+  const msjPI = 'Ingrese un producto que desea comprar.\n 1. Banquito\n 2. Candelabro\n 3. Bandeja Hexagonal\n 4. Bandeja Octogonal\n 5. Espejo\n 6. Mesa Octogonal\n 7.Estante\n Ingrese 0 para terminar con la seleccion'
+  let productoIngresado = parseInt(prompt(msjPI))
   while (productoIngresado !== 0) {
     cant += 1
-    while (verificarIngreso(productoIngresado, 0, 7) === false) {
-      productoIngresado = parseInt(prompt("Seleccion erronea. Por favor vuelva a intentar.\n 1. Banquito\n 2. Candelabro\n 3. Bandeja Hexagonal\n 4. Bandeja Octogonal\n 5. Espejo\n 6. Mesa Octogonal\n 7.Estante\n"))
-    }
+    verificarIngreso(productoIngresado, 0, 7, msjPI)
     car.push(P.find((p) => p.id === productoIngresado))
-    productoIngresado = parseInt(prompt("Productos seleccionados: " + cant + "\nIngrese un producto que desea comprar.\n 1. Banquito\n 2. Candelabro\n 3. Bandeja Hexagonal\n 4. Bandeja Octogonal\n 5. Espejo\n 6. Mesa Octogonal\n 7.Estante\n Ingrese 0 para terminar con la seleccion"))
+    productoIngresado = parseInt(prompt("Productos seleccionados: " + cant + '\n' + msjPI))
   }
   console.log(JSON.stringify(car))
 }
 
 function ordenarProductos(prod) {
-  let metodoIngresado = parseInt(prompt("1. Ordenar por producto\n 2. Ordenar por precio\n 3. Buscar por nombre"))
-  while (verificarIngreso(metodoIngresado, 1, 3) === false) {
-    metodoIngresado = parseInt(prompt("ERROR!!!\n 1. Ordenar por producto\n 2. Ordenar por precio\n 3. Buscar por nombre"))
-  }
+  const msjMI = "1. Ordenar por producto\n 2. Ordenar por precio\n 3. Buscar por nombre"
+  let metodoIngresado = parseInt(prompt(msjMI))
+  verificarIngreso(metodoIngresado, 1, 3, msjMI)
   switch (metodoIngresado) {
     case 1:
-      let metodoIngresadoProducto = parseInt(prompt("PRODUCTOS\n 1. Ascendente\n 2. Decendente"))
-      while (verificarIngreso(metodoIngresadoProducto, 1, 2) === false) {
-        metodoIngresadoProducto = parseInt(prompt("ERROR!!!\n 1. Ascendente\n 2. Decendente"))
-      }
+      const msjMIP = "1. Ascendente\n 2. Decendente"
+      let metodoIngresadoProducto = parseInt(prompt('PRODUCTOS\n' + msjMIP))
+      verificarIngreso(metodoIngresadoProducto, 1, 2, msjMIP)
       sortArrayNombre(prod, metodoIngresadoProducto)
       break
     case 2:
-      let metodoIngresadoPrecio = parseInt(prompt("PRECIO\n 1. Ascendente\n 2. Decendente"))
-      while (verificarIngreso(metodoIngresadoPrecio, 1, 2) === false) {
-        metodoIngresadoPrecio = parseInt(prompt("ERROR!!!\n 1. Ascendente\n 2. Decendente"))
-      }
+      let metodoIngresadoPrecio = parseInt(prompt("PRECIO\n" + msjMIP))
+      verificarIngreso(metodoIngresadoPrecio, 1, 2, msjMIP)
       sortArrayPrecio(prod, metodoIngresadoPrecio)
-      break
+      break;
     case 3:
       let filtro = prompt("Ingrese la busqueda").toUpperCase()
       const busqueda = prod.filter((a) => a.nombre.includes(filtro))
       mostrarCarrito(busqueda)
-      break
+      break;
     default:
       break
   }
@@ -223,10 +216,16 @@ function alertaFinal() {
   alert("El total a abonar es: " + totalPagar)
 }
 
-function verificarIngreso(ingre, a, b) {
-  if (ingre < a || ingre > b || isNaN(ingre)) {
-    return false
-  } else {
-    return true
+function verificarIngreso(ingre, a, b, msj) {
+  while (ingre < a || ingre > b || isNaN(ingre)) {
+    ingre = parseInt(prompt('Error!!\n' + msj))
   }
+  return ingre
+
+
+  // if (ingre < a || ingre > b || isNaN(ingre)) {
+  //   return false
+  // } else {
+  //   return true
+  // }
 }

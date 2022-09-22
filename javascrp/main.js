@@ -95,7 +95,7 @@ function crearCarrito(cant, car, P) {
   let productoIngresado = parseInt(prompt("Ingrese un producto que desea comprar.\n 1. Banquito\n 2. Candelabro\n 3. Bandeja Hexagonal\n 4. Bandeja Octogonal\n 5. Espejo\n 6. Mesa Octogonal\n 7.Estante\n Ingrese 0 para terminar con la seleccion"))
   while (productoIngresado !== 0) {
     cant += 1
-    while (verificarIngreso(productoIngresado, 0, 7) === false || productoIngresado === "") {
+    while (verificarIngreso(productoIngresado, 0, 7) === false) {
       productoIngresado = parseInt(prompt("Seleccion erronea. Por favor vuelva a intentar.\n 1. Banquito\n 2. Candelabro\n 3. Bandeja Hexagonal\n 4. Bandeja Octogonal\n 5. Espejo\n 6. Mesa Octogonal\n 7.Estante\n"))
     }
     car.push(P.find((p) => p.id === productoIngresado))
@@ -113,14 +113,14 @@ function ordenarProductos(prod) {
     case 1:
       let metodoIngresadoProducto = parseInt(prompt("PRODUCTOS\n 1. Ascendente\n 2. Decendente"))
       while (verificarIngreso(metodoIngresadoProducto, 1, 2) === false) {
-        let metodoIngresadoProducto = parseInt(prompt("ERROR!!!\n 1. Ascendente\n 2. Decendente"))
+        metodoIngresadoProducto = parseInt(prompt("ERROR!!!\n 1. Ascendente\n 2. Decendente"))
       }
       sortArrayNombre(prod, metodoIngresadoProducto)
       break
     case 2:
       let metodoIngresadoPrecio = parseInt(prompt("PRECIO\n 1. Ascendente\n 2. Decendente"))
       while (verificarIngreso(metodoIngresadoPrecio, 1, 2) === false) {
-        let metodoIngresadoPrecio = parseInt(prompt("ERROR!!!\n 1. Ascendente\n 2. Decendente"))
+        metodoIngresadoPrecio = parseInt(prompt("ERROR!!!\n 1. Ascendente\n 2. Decendente"))
       }
       sortArrayPrecio(prod, metodoIngresadoPrecio)
       break
@@ -224,7 +224,7 @@ function alertaFinal() {
 }
 
 function verificarIngreso(ingre, a, b) {
-  if (ingre < a || ingre > b) {
+  if (ingre < a || ingre > b || isNaN(ingre)) {
     return false
   } else {
     return true

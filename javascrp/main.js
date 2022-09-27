@@ -1,7 +1,6 @@
 // El tema que tome de eleccion es un e-comerce de venta de muebles fabricado a mano
 
-const PRODUCTOS = [
-  {
+const PRODUCTOS = [{
     id: 1,
     nombre: "BANQUITO",
     precio: 5700,
@@ -72,6 +71,7 @@ const PRODUCTOS = [
     direc: "./pages/mesa.html",
   },
 ]
+<<<<<<< HEAD
 // console.log(PRODUCTOS.prodCar)
 let cont = 1
 let contClase = 0
@@ -104,6 +104,44 @@ for (const producto of PRODUCTOS) {
       cont--
       divPadre.appendChild(contenedor)
       contClase++
+=======
+console.log(JSON.stringify(PRODUCTOS))
+let carrito = []
+let cantDeArticulos = 0
+let cantDescuento = 0
+let nombreUsuario = pedirNombreYApe()
+alertaIncial(carrito)
+alertaFinal(carrito)
+
+function alertaIncial(car) {
+  let numeroIngresado
+  const msjI = "1. Comenzar/Continuar compra\n 2. Ordenar productos\n 3. Aplicar descuento\n 4. Mostrar carrito\n 5. Finalizar\n"
+  do {
+    numeroIngresado = parseInt(prompt(msjI))
+    verificarIngreso(numeroIngresado, 1, 5, msjI)
+    switch (numeroIngresado) {
+      case 1:
+        crearCarrito(cantDeArticulos, car, PRODUCTOS)
+        break
+      case 2:
+        ordenarProductos(PRODUCTOS)
+        break
+
+      case 3:
+        if (car.length === 0 || cantDescuento === 1) {
+          alert("No se puede aplicar descuento")
+        } else {
+          carrito = descuentoProductos(car)
+          cantDescuento += 1
+          alert("Se aplico un 20% de decuento!!!!")
+        }
+        break
+      case 4:
+        mostrarCarrito(car)
+        break
+      default:
+        break
+>>>>>>> 33f368cab8279b8e995a9362a2c5f06e8ddae9f0
     }
   } else {
     contenedor.setAttribute("id", contClaseString)
@@ -120,6 +158,7 @@ for (const producto of PRODUCTOS) {
   }
 }
 
+<<<<<<< HEAD
 // let carrito = []
 // let cantDeArticulos = 0
 // let cantDescuento = 0
@@ -141,6 +180,45 @@ for (const producto of PRODUCTOS) {
 //       case 2:
 //         ordenarProductos(PRODUCTOS)
 //         break
+=======
+function crearCarrito(cant, car, P) {
+  const msjPI = 'Ingrese un producto que desea comprar.\n 1. Banquito\n 2. Candelabro\n 3. Bandeja Hexagonal\n 4. Bandeja Octogonal\n 5. Espejo\n 6. Mesa Octogonal\n 7.Estante\n Ingrese 0 para terminar con la seleccion'
+  let productoIngresado = parseInt(prompt(msjPI))
+  while (productoIngresado !== 0) {
+    cant += 1
+    verificarIngreso(productoIngresado, 0, 7, msjPI)
+    car.push(P.find((p) => p.id === productoIngresado))
+    productoIngresado = parseInt(prompt("Productos seleccionados: " + cant + '\n' + msjPI))
+  }
+  console.log(JSON.stringify(car))
+}
+
+function ordenarProductos(prod) {
+  const msjMI = "1. Ordenar por producto\n 2. Ordenar por precio\n 3. Buscar por nombre"
+  let metodoIngresado = parseInt(prompt(msjMI))
+  verificarIngreso(metodoIngresado, 1, 3, msjMI)
+  switch (metodoIngresado) {
+    case 1:
+      const msjMIP = "1. Ascendente\n 2. Decendente"
+      let metodoIngresadoProducto = parseInt(prompt('PRODUCTOS\n' + msjMIP))
+      verificarIngreso(metodoIngresadoProducto, 1, 2, msjMIP)
+      sortArrayNombre(prod, metodoIngresadoProducto)
+      break
+    case 2:
+      let metodoIngresadoPrecio = parseInt(prompt("PRECIO\n" + msjMIP))
+      verificarIngreso(metodoIngresadoPrecio, 1, 2, msjMIP)
+      sortArrayPrecio(prod, metodoIngresadoPrecio)
+      break;
+    case 3:
+      let filtro = prompt("Ingrese la busqueda").toUpperCase()
+      const busqueda = prod.filter((a) => a.nombre.includes(filtro))
+      mostrarCarrito(busqueda)
+      break;
+    default:
+      break
+  }
+}
+>>>>>>> 33f368cab8279b8e995a9362a2c5f06e8ddae9f0
 
 //       case 3:
 //         if (car.length === 0 || cantDescuento === 1) {
@@ -248,6 +326,7 @@ for (const producto of PRODUCTOS) {
 //   }
 // }
 
+<<<<<<< HEAD
 // function sortArrayPrecio(array, x) {
 //   switch (x) {
 //     case 1:
@@ -312,3 +391,18 @@ for (const producto of PRODUCTOS) {
 //     return true
 //   }
 // }
+=======
+function verificarIngreso(ingre, a, b, msj) {
+  while (ingre < a || ingre > b || isNaN(ingre)) {
+    ingre = parseInt(prompt('Error!!\n' + msj))
+  }
+  return ingre
+
+
+  // if (ingre < a || ingre > b || isNaN(ingre)) {
+  //   return false
+  // } else {
+  //   return true
+  // }
+}
+>>>>>>> 33f368cab8279b8e995a9362a2c5f06e8ddae9f0

@@ -1,0 +1,19 @@
+$color-principal: #353535;
+$color-fondo: #EBEBEB;
+$color-fondo-footer: #dbdbdb;
+$color-medio: #515151;
+
+$estilo1 :(font: ('Chivo', sans-serif),
+    fontsize: 20px,
+    fontdeco: none,
+    color: $color-principal);
+
+$estilo2: (font: ('Chivo', sans-serif),
+    fontsize: 20px,
+    fontdeco: none,
+    color: $color-medio);
+
+@mixin sizes_redes {
+    height: 50px;
+    width: 50px;
+}

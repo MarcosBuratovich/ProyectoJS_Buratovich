@@ -1,0 +1,40 @@
+#main_index {
+    background-color: $color-fondo;
+
+    .productos_index {
+        max-width: 1400px;
+
+    }
+
+    .icono_pago,
+    .icono_wapp,
+    .icono_shield {
+        display: flex;
+
+        .icono_pago_texto,
+        .icono_shield_texto,
+        .icono_wapp_texto {
+
+            h5 {
+                color: map-get($estilo2, color);
+                font-family: map-get($estilo2, font);
+                font-size: 1rem;
+            }
+
+            p {
+                color: map-get($estilo2, color);
+                font-family: map-get($estilo2, font);
+                font-size: 0.7rem;
+            }
+        }
+    }
+
+    .img_icono_pago,
+    .img_icono_wapp,
+    .img_icono_shield {
+        width: 100%;
+        height: auto;
+        max-width: 100px;
+
+    }
+}

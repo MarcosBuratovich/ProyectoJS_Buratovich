@@ -1,0 +1,31 @@
+@media only screen and (min-width: 769px) {
+
+    .logo-img {
+        height: 60px;
+        width: 100px;
+        padding: 5px;
+        margin: 1px 1px 1px 1px;
+    }
+
+    .boton_nav_inicio {
+        display: none;
+    }
+
+    .boton__mail__contacto,
+    .boton__telefono__contacto {
+        display: none;
+    }
+
+    .section_productos {
+        max-width: 1800px;
+    }
+
+    .boton_nav_inicio {
+        display: none;
+    }
+
+    .boton__mail__contacto,
+    .boton__telefono__contacto {
+        display: none;
+    }
+}

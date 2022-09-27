@@ -1,0 +1,35 @@
+@media screen and (max-width: 349px) {
+
+
+    .nav__pestanias {
+        display: none;
+    }
+
+    .contacto__escrito,
+    .footer__nav__col {
+        display: none;
+    }
+
+    .footer__nav {
+        display: none;
+    }
+
+    .logo-img {
+        height: 60px;
+        width: 100px;
+        padding: 5px;
+        margin: 1px 1px 1px 1px;
+    }
+
+    .footer__div__link h3 {
+        display: none;
+    }
+
+    .producto-estante {
+        display: none;
+    }
+
+    .icono_shield_row {
+        display: none;
+    }
+}

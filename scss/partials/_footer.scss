@@ -1,0 +1,73 @@
+@import "./variables";
+
+.footer {
+    background-color: $color-fondo-footer;
+    padding-top: 1rem;
+
+    div {
+        h3 {
+            font-size: map-get($estilo1, fontsize);
+            font-weight: bold;
+        }
+    }
+
+    .indice_footer {
+        li {
+            display: flex;
+            list-style: map-get($estilo1, fontdeco);
+            font-size: map-get($estilo1, fontsize);
+            font-weight: bold;
+            color: map-get($estilo1, color);
+            font-family: map-get($estilo1, font);
+            padding-bottom: 1rem;
+
+            a {
+                text-decoration: map-get($estilo1, fontdeco);
+                color: map-get($estilo1, color);
+                font-size: 14px;
+                font-family: map-get($estilo1, font);
+            }
+        }
+    }
+
+    .footer__div__contacto {
+        color: $color-principal;
+        font-family: map-get($estilo1, font);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        p {
+            font-size: 14px;
+            padding-top: 1vh;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .mini_mail_footer,
+        .mini_tel_footer {
+            height: 30px;
+            width: 30px;
+        }
+
+        .boton__telefono__contacto,
+        .boton__mail__contacto {
+            margin: 1rem;
+        }
+    }
+
+    .footer__div__link {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+
+        .footer_instagram,
+        .footer_whatsapp {
+            @include sizes_redes
+        }
+
+
+    }
+
+}

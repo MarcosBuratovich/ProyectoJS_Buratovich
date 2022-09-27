@@ -1,0 +1,50 @@
+@import "./variables";
+
+#inicio1 {
+    background-color: $color-fondo;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    .logo-img {
+        height: 60px;
+        width: 100px;
+        padding: 5px;
+        margin: 1px 10px 1px 40px;
+    }
+
+    .lista-header {
+        text-align: end;
+    }
+
+    .lista-header,
+    .nav-item a,
+    .dropdown-menu li a {
+        text-decoration: map-get($estilo1, fontdeco);
+        color: map-get($estilo1, color);
+        font-size: map-get($estilo1, fontsize);
+        font-family: map-get($estilo1, font);
+    }
+
+    .offcanvas-title {
+        font-size: 30px;
+    }
+
+    .nav-item,
+    .dropdown-menu li {
+        padding-bottom: 1rem;
+        text-decoration: none;
+    }
+
+    .barra-nav {
+        text-decoration: map-get($estilo1, fontdeco);
+        color: map-get($estilo1, color);
+        font-size: map-get($estilo1, fontsize);
+        font-family: map-get($estilo1, font);
+    }
+
+    .dropdown-menu {
+        @extend .barra-nav;
+        font-size: 16px;
+    }
+}

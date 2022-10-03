@@ -1,41 +1,35 @@
 @import "./variables";
 
 .product {
-    max-width: 1980px;
+  max-width: 1980px;
 
-    .card-body {
-        display: flex;
-        flex-direction: column;
+  .card-body {
+    display: flex;
+    flex-direction: column;
 
-
-        img {
-            padding-top: 10px;
-            margin: 1px;
-        }
-
-        .img-chico {
-            max-width: 100px;
-        }
-
+    img {
+      padding-top: 10px;
+      margin: 1px;
     }
+
+    .img-chico {
+      max-width: 100px;
+    }
+  }
 }
 
-
-
-
 .form__div__button {
-    width: 100%;
-    padding: 20px;
-    font-size: 24px;
-    border-radius: 8px;
-    color: black;
-    text-align: center;
-    cursor: pointer;
-    margin-top: 10px;
+  width: 100%;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 8px;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
 
-
-    &:hover {
-        background-color: rgb(108, 195, 108);
-        color: white;
-    }
+  &:hover {
+    background-color: rgb(108, 195, 108);
+    color: white;
+  }
 }

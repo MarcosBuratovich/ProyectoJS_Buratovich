@@ -1,5 +1,4 @@
-const PRODUCTOS = [
-  {
+const PRODUCTOS = [{
     id: 1,
     nombre: "BANQUITO",
     precio: 5700,
@@ -8,6 +7,7 @@ const PRODUCTOS = [
     stock: 10,
     alt: "ProductoBanquito",
     direc: "./pages/banquito.html",
+    cantidad: 1,
   },
   {
     id: 2,
@@ -18,26 +18,29 @@ const PRODUCTOS = [
     stock: 8,
     alt: "ProductoCandelabro",
     direc: "./pages/candelabro.html",
+    cantidad: 1,
   },
   {
     id: 3,
-    nombre: "BANDEJAHEX",
+    nombre: "BANDEJAHEXAGONAL",
     precio: 8900,
     imgFile: "./images/bandeja_hex_inicio.jpg",
     prodCar: 1,
     stock: 3,
     alt: "ProductoBandejaHexagonal",
     direc: "./pages/hexagonal.html",
+    cantidad: 1,
   },
   {
     id: 4,
-    nombre: "BANDEJAOCTO",
+    nombre: "BANDEJAOCTOGONAL",
     precio: 11000,
     imgFile: "./images/bandeja_octo_inicio.png",
     prodCar: 1,
     stock: 4,
     alt: "ProductoBandejaOctogonal",
     direc: "./pages/octogonal.html",
+    cantidad: 1,
   },
   {
     id: 5,
@@ -48,6 +51,7 @@ const PRODUCTOS = [
     stock: 2,
     alt: "ProductoEstante",
     direc: "./pages/estante.html",
+    cantidad: 1,
   },
   {
     id: 6,
@@ -58,16 +62,18 @@ const PRODUCTOS = [
     stock: 6,
     alt: "ProductoEspejo",
     direc: "./pages/espejo.html",
+    cantidad: 1,
   },
   {
     id: 7,
-    nombre: "MESAOCTO",
+    nombre: "MESAOCTOGONAL",
     precio: 25000,
     imgFile: "./images/mesita_inicio.png",
     prodCar: 1,
     stock: 6,
     alt: "ProductoMesaOcotogonal",
     direc: "./pages/mesa.html",
+    cantidad: 1,
   },
 ]
 

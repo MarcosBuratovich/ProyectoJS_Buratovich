@@ -1,3 +1,7 @@
+import {
+  validarProductoRepetido
+} from "./components/products/cartActions.js"
+
 const contador = document.querySelector(".count")
 let cont = 1
 const suma = document.querySelector(".plus")
@@ -21,4 +25,9 @@ resta.addEventListener("click", () => {
 })
 
 const seleccionProducto = document.querySelector(".button_carrito")
-console.log(seleccionProducto.id)
+const prod = JSON.parse(localStorage.getItem("productosJSON"))
+const title = document.querySelector("#titlePages").innerHTML
+seleccionProducto.addEventListener("click", () => {
+  const busqueda = prod.find((a) => a.nombre === title)
+  validarProductoRepetido(busqueda, cont)
+})

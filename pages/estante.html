@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>ESTANTE</title>
+    <title id="titlePages">ESTANTE</title>
     <meta name="description" content="Catalogo de VIKAN. Venta de muebles elaborados a mano y diseños unicos.">
     <meta name="keywords" content="ESTANTE, ESTANTE NEGRO, ESTANTE DORADO, ESTANTE BLANCO, MUBELES, DISEÑADOR, MUEBLES VINTAGE, MUEBLES PREMIUM">
 </head>
@@ -85,91 +85,17 @@
             </div>
         </article>
     </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="row justify-content-around">
-                <div class="col-3 footer__nav__col">
-                    <nav class="footer__nav">
-                        <ul class="indice_footer">
-                            <li>Categorias</li class="titulo_footer_li">
-                            <li><a href="./banquito.html">Banquito</a></li>
-                            <li><a href="./candelabro.html">Candelabro</a></li>
-                            <li><a href="./hexagonal.html">Bandeja Hexagonal</a></li>
-                            <li><a href="./octogonal.html">Bandeja Octogonal</a></li>
-                            <li><a href="./espejo.html">Espejo</a></li>
-                            <li><a href="./mesa.html">Mesa Osctogonal</a></li>
-                            <li><a href="./estante.html">Estante</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-4 footer__div__contacto__col">
-                    <div class="footer__div__contacto">
-                        <div class="contacto__escrito">
-                            <h3>Contactános</h3>
-                            <p><img src="../images/mini_mail.png" alt="Signo Mail" class="mini_mail_footer">
-                                estudiovikanhd@gmail.com</p>
-                            <p><img src="../images/mini_tel.png" alt="Signo Telefono" class="mini_tel_footer"> +5491131348073</p>
-                        </div>
-                        <div class="boton__telefono__contacto">
-                            <h3>Contactános</h3>
-                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                <img src="../images/mini_tel.png" alt="Signo Telefono" class="mini_tel_footer">
-                            </button>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Telefono</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body text-center">
-                                            +5491131348073
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="boton__mail__contacto">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                                <img src="../images/mini_mail.png" alt="Signo Mail" class="mini_mail_footer">
-                            </button>
-                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Mail</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body text-center">
-                                            estudiovikanhd@gmail.com
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3 footer__div__link__col">
-                    <div class="footer__div__link">
-                        <h3>Sigamos Contectados</h3>
-                        <p><a href="http://www.instagram.com/vikan.hd/" target=”_blank”><img src="../images/pixel instagram.png" alt="Icono Instagram" class="footer_instagram"></a></p>
-                        <p><a href="https://wa.me/5491131348073?text=Hola%20quiero%20hacer%20una%20consulta" target=”_blank”><img src="../images/pixel whatsapp.png" alt="Icono Whatsapp" class="footer_whatsapp"></a></p>
-                        <p>&copy Marcos Buratovich</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <footer id="footerPages" class="footer">
+
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>
+    <script src="../javascrp/productpages.js" type="module"></script>
+    <script src="../javascrp/components/products/cartActions.js" type="module"></script>
+    <script src="../javascrp/shortcuts/headerPages.js" defer></script>
+    <script src="../javascrp/shortcuts/footerPages.js" defer></script>
 
 </body>
 

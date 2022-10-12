@@ -36,6 +36,19 @@ if (carrito.length !== 0) {
 const seleccionProducto = document.querySelector(".button_carrito")
 const title = document.querySelector("#titlePages").innerHTML
 seleccionProducto.addEventListener("click", () => {
+
   const busqueda = prod.find((a) => a.nombre === title)
   validarProductoRepetido(busqueda, cont)
+
+  Toastify({
+    text: "Se agrego un producto al carrito",
+    duration: 3000,
+    close: true,
+    gravity: "top",
+    position: "center",
+    stopOnFocus: true,
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+  }).showToast();
 })

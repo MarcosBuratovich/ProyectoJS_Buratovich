@@ -1,5 +1,6 @@
 import {
-  validarProductoRepetido
+  validarProductoRepetido,
+  mostrarCarrito
 } from "./components/products/cartActions.js"
 
 const prod = JSON.parse(localStorage.getItem("productosJSON"))
@@ -24,6 +25,13 @@ resta.addEventListener("click", () => {
     contador.innerHTML = cont
   }
 })
+
+let carrito = JSON.parse(sessionStorage.getItem("carritoJSON"))
+if (carrito.length !== 0) {
+  carrito.forEach(e => {
+    mostrarCarrito(e)
+  });
+}
 
 const seleccionProducto = document.querySelector(".button_carrito")
 const title = document.querySelector("#titlePages").innerHTML

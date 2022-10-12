@@ -21,13 +21,12 @@ header.innerHTML = `<div class="container-fluid">
                     <span id= "badge-cart" class="badge text-bg-secondary">0</span>
                 </button>
 
-                <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas offcanvas-start modal-carrito" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">VIKAN - SHOP</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div id= "carrito-contenedor" class="offcanvas-body">
-                        <div id= "cantidad-total-carrito"></div>
                     </div>
                     <hr class="mb-4" style="height: 2px; background-color: #1266f1; opacity: 1;">
                     <div class="d-flex justify-content-between p-2 mb-2" style="background-color: #e1f5fe;">

@@ -2,7 +2,7 @@ const PRODUCTOS = [{
     id: 1,
     nombre: "BANQUITO",
     precio: 5700,
-    imgFile: "./images/banquito_inicio.png",
+    imgFile: "https://i.ibb.co/H752dn3/banquito-inicio.png",
     prodCar: 1,
     stock: 10,
     alt: "ProductoBanquito",
@@ -13,7 +13,7 @@ const PRODUCTOS = [{
     id: 2,
     nombre: "CANDELABRO",
     precio: 13000,
-    imgFile: "./images/candelabro_inicio.jpg",
+    imgFile: "https://i.ibb.co/MRjqNW1/candelabro-inicio.jpg",
     prodCar: 1,
     stock: 8,
     alt: "ProductoCandelabro",
@@ -22,9 +22,9 @@ const PRODUCTOS = [{
   },
   {
     id: 3,
-    nombre: "BANDEJAHEXAGONAL",
+    nombre: "BANDEJA HEXAGONAL",
     precio: 8900,
-    imgFile: "./images/bandeja_hex_inicio.jpg",
+    imgFile: "https://i.ibb.co/WpJktBz/bandeja-hex-inicio.jpg",
     prodCar: 1,
     stock: 3,
     alt: "ProductoBandejaHexagonal",
@@ -33,9 +33,9 @@ const PRODUCTOS = [{
   },
   {
     id: 4,
-    nombre: "BANDEJAOCTOGONAL",
+    nombre: "BANDEJA OCTOGONAL",
     precio: 11000,
-    imgFile: "./images/bandeja_octo_inicio.png",
+    imgFile: "https://i.ibb.co/4NwKZV2/bandeja-octo-inicio.png",
     prodCar: 1,
     stock: 4,
     alt: "ProductoBandejaOctogonal",
@@ -46,7 +46,7 @@ const PRODUCTOS = [{
     id: 5,
     nombre: "ESTANTE",
     precio: 16000,
-    imgFile: "./images/estante_inicio.png",
+    imgFile: "https://i.ibb.co/993rTzx/estante-inicio.png",
     prodCar: 2,
     stock: 2,
     alt: "ProductoEstante",
@@ -57,7 +57,7 @@ const PRODUCTOS = [{
     id: 6,
     nombre: "ESPEJO",
     precio: 19000,
-    imgFile: "./images/render_espejo_inicio.png",
+    imgFile: "https://i.ibb.co/2dRJ2xw/render-espejo-inicio.png",
     prodCar: 1,
     stock: 6,
     alt: "ProductoEspejo",
@@ -66,9 +66,9 @@ const PRODUCTOS = [{
   },
   {
     id: 7,
-    nombre: "MESAOCTOGONAL",
+    nombre: "MESA OCTOGONAL",
     precio: 25000,
-    imgFile: "./images/mesita_inicio.png",
+    imgFile: "https://i.ibb.co/H43M84P/mesita-inicio.png",
     prodCar: 1,
     stock: 6,
     alt: "ProductoMesaOcotogonal",
@@ -79,3 +79,20 @@ const PRODUCTOS = [{
 
 const eJSON = JSON.stringify(PRODUCTOS)
 localStorage.setItem("productosJSON", eJSON)
+
+import {
+  mostrarCarrito
+} from "./cartActions.js";
+
+let carrito = JSON.parse(sessionStorage.getItem("carritoJSON"))
+if (carrito === null) {
+  let carrito = []
+  let cJSON = JSON.stringify(carrito)
+  sessionStorage.setItem("carritoJSON", cJSON)
+} else {
+  if (carrito.length !== 0) {
+    carrito.forEach(e => {
+      mostrarCarrito(e)
+    });
+  }
+}

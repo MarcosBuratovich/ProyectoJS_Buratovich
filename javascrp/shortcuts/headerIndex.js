@@ -33,6 +33,7 @@ header.innerHTML = `<div class="container-fluid">
                     <h5 class="fw-bold mb-0">Total:</h5>
                     <h5 id="precio-total-carrito" class="fw-bold mb-0">$0</h5>
                 </div>
+                <button type="button" class="completar-carrito btn btn-primary ms-5 me-5 mt-2 mb-2">Completar compra</button>
             </div>
             <div class="col-2 boton_nav_inicio">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

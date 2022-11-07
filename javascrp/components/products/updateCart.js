@@ -1,7 +1,7 @@
 function actualizarTotalesCarrito(carrito) {
   // const totalCantidad = carrito.reduce((acc, producto) => acc + producto.cantidad, 0)
   const totalCantidad = carrito.length
-  const totalCompra = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0)
+  const totalCompra = carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0)
 
   pinratTotalesCarrito(totalCantidad, totalCompra)
 }
@@ -13,6 +13,4 @@ function pinratTotalesCarrito(totalCantidad, totalCompra) {
   precioTotal.innerText = "$" + totalCompra
 }
 
-export {
-  actualizarTotalesCarrito
-}
+export { actualizarTotalesCarrito }

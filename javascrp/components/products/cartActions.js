@@ -1,40 +1,34 @@
-import {
-  actualizarTotalesCarrito
-} from "./updateCart.js"
-
-
-
+import { actualizarTotalesCarrito } from "./updateCart.js"
 
 function validarProductoRepetido(productoBuscado, cantidad) {
   let carrito = JSON.parse(sessionStorage.getItem("carritoJSON"))
-  const productoRepetido = carrito.find(producto => producto.id === productoBuscado.id)
-  console.log(carrito);
-  console.log(productoRepetido);
+  const productoRepetido = carrito.find((producto) => producto.id === productoBuscado.id)
+  console.log(carrito)
+  console.log(productoRepetido)
   if (productoRepetido) {
     productoRepetido.cantidad = productoRepetido.cantidad + cantidad
     actualizarTotalesCarrito(carrito)
     const modificarCant = document.getElementById("cantidad-producto-carrito")
     modificarCant.innerHTML = productoRepetido.cantidad
-    sessionStorage.setItem('carritoJSON', JSON.stringify(carrito))
+    sessionStorage.setItem("carritoJSON", JSON.stringify(carrito))
   } else {
     agregarAlCarrito(productoBuscado, cantidad)
   }
-
 }
 
 function agregarAlCarrito(productoBus, cant) {
   let carrito = JSON.parse(sessionStorage.getItem("carritoJSON"))
   productoBus.cantidad = cant
   carrito.push(productoBus)
-  sessionStorage.setItem('carritoJSON', JSON.stringify(carrito))
+  sessionStorage.setItem("carritoJSON", JSON.stringify(carrito))
   mostrarCarrito(productoBus)
 }
 
 function mostrarCarrito(productoBus) {
   let carrito = JSON.parse(sessionStorage.getItem("carritoJSON"))
   const contenedor2 = document.getElementById("carrito-contenedor")
-  const div = document.createElement('div')
-  div.classList.add('productoEnCarrito')
+  const div = document.createElement("div")
+  div.classList.add("productoEnCarrito")
   div.innerHTML = `
                     <div id= "producto-carrito-${productoBus.id}"class="card mb-3">
                   <div class="card-body">
@@ -65,31 +59,31 @@ function mostrarCarrito(productoBus) {
                     `
   contenedor2.appendChild(div)
   actualizarTotalesCarrito(carrito)
-
 }
 
 function eliminarCarrito(productId) {
   const contenedor = document.getElementById("carrito-contenedor")
   let carrito = JSON.parse(sessionStorage.getItem("carritoJSON"))
-  const carritoActualizado = carrito.filter(e => e.id != productId)
-  if (carritoActualizado.length !== 0) {
-    contenedor.innerHTML = ''
-    carritoActualizado.forEach(e => {
-      mostrarCarrito(e)
-    })
-    actualizarTotalesCarrito(carritoActualizado)
+  if (productId !== "delete") {
+    const carritoActualizado = carrito.filter((e) => e.id != productId)
+    if (carritoActualizado.length !== 0) {
+      contenedor.innerHTML = ""
+      carritoActualizado.forEach((e) => {
+        mostrarCarrito(e)
+      })
+      actualizarTotalesCarrito(carritoActualizado)
+    } else {
+      contenedor.innerHTML = ""
+      actualizarTotalesCarrito(carritoActualizado)
+    }
+    sessionStorage.setItem("carritoJSON", JSON.stringify(carritoActualizado))
   } else {
-    contenedor.innerHTML = ''
-    actualizarTotalesCarrito(carritoActualizado)
+    carrito = []
+    let cJSON = JSON.stringify(carrito)
+    sessionStorage.setItem("carritoJSON", cJSON)
+    contenedor.innerHTML = ""
+    actualizarTotalesCarrito(carrito)
   }
-  sessionStorage.setItem('carritoJSON', JSON.stringify(carritoActualizado))
 }
 
-
-
-export {
-  agregarAlCarrito,
-  validarProductoRepetido,
-  mostrarCarrito,
-  eliminarCarrito,
-}
+export { agregarAlCarrito, validarProductoRepetido, mostrarCarrito, eliminarCarrito }

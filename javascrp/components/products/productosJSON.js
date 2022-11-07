@@ -1,96 +1,14 @@
-// const PRODUCTOS = [{
-//     id: 1,
-//     nombre: "BANQUITO",
-//     precio: 5700,
-//     imgFile: "https://i.ibb.co/H752dn3/banquito-inicio.png",
-//     prodCar: 1,
-//     stock: 10,
-//     alt: "ProductoBanquito",
-//     direc: "./pages/banquito.html",
-//     cantidad: 1,
-//   },
-//   {
-//     id: 2,
-//     nombre: "CANDELABRO",
-//     precio: 13000,
-//     imgFile: "https://i.ibb.co/MRjqNW1/candelabro-inicio.jpg",
-//     prodCar: 1,
-//     stock: 8,
-//     alt: "ProductoCandelabro",
-//     direc: "./pages/candelabro.html",
-//     cantidad: 1,
-//   },
-//   {
-//     id: 3,
-//     nombre: "BANDEJA HEXAGONAL",
-//     precio: 8900,
-//     imgFile: "https://i.ibb.co/WpJktBz/bandeja-hex-inicio.jpg",
-//     prodCar: 1,
-//     stock: 3,
-//     alt: "ProductoBandejaHexagonal",
-//     direc: "./pages/hexagonal.html",
-//     cantidad: 1,
-//   },
-//   {
-//     id: 4,
-//     nombre: "BANDEJA OCTOGONAL",
-//     precio: 11000,
-//     imgFile: "https://i.ibb.co/4NwKZV2/bandeja-octo-inicio.png",
-//     prodCar: 1,
-//     stock: 4,
-//     alt: "ProductoBandejaOctogonal",
-//     direc: "./pages/octogonal.html",
-//     cantidad: 1,
-//   },
-//   {
-//     id: 5,
-//     nombre: "ESTANTE",
-//     precio: 16000,
-//     imgFile: "https://i.ibb.co/993rTzx/estante-inicio.png",
-//     prodCar: 2,
-//     stock: 2,
-//     alt: "ProductoEstante",
-//     direc: "./pages/estante.html",
-//     cantidad: 1,
-//   },
-//   {
-//     id: 6,
-//     nombre: "ESPEJO",
-//     precio: 19000,
-//     imgFile: "https://i.ibb.co/2dRJ2xw/render-espejo-inicio.png",
-//     prodCar: 1,
-//     stock: 6,
-//     alt: "ProductoEspejo",
-//     direc: "./pages/espejo.html",
-//     cantidad: 1,
-//   },
-//   {
-//     id: 7,
-//     nombre: "MESA OCTOGONAL",
-//     precio: 25000,
-//     imgFile: "https://i.ibb.co/H43M84P/mesita-inicio.png",
-//     prodCar: 1,
-//     stock: 6,
-//     alt: "ProductoMesaOcotogonal",
-//     direc: "./pages/mesa.html",
-//     cantidad: 1,
-//   },
-// ]
+import { mostrarCarrito } from "./cartActions.js"
 
-// const eJSON = JSON.stringify(PRODUCTOS)
-// localStorage.setItem("productosJSON", eJSON)
-
-import { mostrarCarrito } from "./cartActions.js";
-
-let carrito = JSON.parse(sessionStorage.getItem("carritoJSON"));
+let carrito = JSON.parse(sessionStorage.getItem("carritoJSON"))
 if (carrito === null) {
-  let carrito = [];
-  let cJSON = JSON.stringify(carrito);
-  sessionStorage.setItem("carritoJSON", cJSON);
+  let carrito = []
+  let cJSON = JSON.stringify(carrito)
+  sessionStorage.setItem("carritoJSON", cJSON)
 } else {
   if (carrito.length !== 0) {
     carrito.forEach((e) => {
-      mostrarCarrito(e);
-    });
+      mostrarCarrito(e)
+    })
   }
 }
